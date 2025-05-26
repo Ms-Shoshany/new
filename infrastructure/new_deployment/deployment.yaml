@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: new
+  labels:
+    app: new
+    service: new
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: new
+      service: new
+  template:
+    metadata:
+      labels:
+        app: new
+        service: new
+    spec:
+      containers:
+      - name: new-container
+        image: hhana982/new:1.<version>
+        ports:
+        - containerPort: 5000
+        env: 
